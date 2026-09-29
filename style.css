@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-soft: #fdf8fc;
+  --white: #ffffff;
+  --dark-purple: #3b123d;
+  --card-purple: #581952;
+  --pink: #ee68a4;
+  --text-soft: #6d5d6d;
+  --rating-bg: #f9f2f9;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-soft);
+  color: var(--dark-purple);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* MAIN */
+
+.testimonial-section {
+  min-height: 100vh;
+  padding: 90px 5vw 80px;
+  background: var(--bg-soft);
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* TOP */
+
+.top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 55px;
+}
+
+.heading-area {
+  flex: 1 1 45%;
+  max-width: 500px;
+}
+
+.heading-area h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--dark-purple);
+  max-width: 430px;
+  letter-spacing: -0.04em;
+}
+
+.heading-area p {
+  margin-top: 22px;
+  max-width: 430px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+/* RATINGS */
+
+.ratings {
+  flex: 1 1 43%;
+  max-width: 540px;
+  padding-top: 14px;
+}
+
+.rating-img {
+  width: 100%;
+  max-width: 390px;
+  min-height: 52px;
+  margin-bottom: 12px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--rating-bg);
+  border-radius: 6px;
+}
+
+.rating-img:nth-child(2) {
+  margin-left: 40px;
+}
+
+.rating-img:nth-child(3) {
+  margin-left: 80px;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.rating-stars img {
+  width: 15px;
+  height: 15px;
+}
+
+.rating-text {
+  color: var(--dark-purple);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: start;
+}
+
+.card {
+  background: var(--card-purple);
+  border-radius: 8px;
+  padding: 28px 25px;
+  color: var(--white);
+  box-shadow: 0 10px 25px rgba(88, 25, 82, 0.08);
+}
+
+/* DESKTOP STAGGER */
+
+.card:nth-child(2) {
+  margin-top: 20px;
+}
+
+.card:nth-child(3) {
+  margin-top: 40px;
+}
+
+/* USER */
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.user-info span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.95rem;
+  color: var(--pink);
+}
+
+/* REVIEW */
+
+.review {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #f4eaf3;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .top-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 32px;
+  }
+
+  .heading-area,
+  .ratings {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .heading-area {
+    text-align: center;
+  }
+
+  .heading-area h1,
+  .heading-area p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ratings {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rating-img,
+  .rating-img:nth-child(2),
+  .rating-img:nth-child(3) {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  .testimonial-section {
+    padding: 60px 22px 48px;
+  }
+
+  .heading-area h1 {
+    font-size: clamp(2.3rem, 9vw, 3.2rem);
+    max-width: 300px;
+  }
+
+  .heading-area p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 18px;
+  }
+
+  .rating-img {
+    min-height: 58px;
+    padding: 12px 18px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .rating-stars {
+    justify-content: center;
+  }
+
+  .rating-stars img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .rating-text {
+    font-size: 0.92rem;
+    white-space: normal;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 22px 18px;
+  }
+}
